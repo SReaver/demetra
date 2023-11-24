@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+  pg-db:
+    image: postgres
+    restart: unless-stopped
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+  redis:
+    image: redis:latest
+    restart: always
+    ports:
+      - '6379:6379'
